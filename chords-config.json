@@ -1,0 +1,127 @@
+{
+  "roots": ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"],
+  "noteToSemitone": {
+    "C": 0,
+    "C#": 1,
+    "Db": 1,
+    "D": 2,
+    "Eb": 3,
+    "D#": 3,
+    "E": 4,
+    "F": 5,
+    "F#": 6,
+    "Gb": 6,
+    "G": 7,
+    "Ab": 8,
+    "G#": 8,
+    "A": 9,
+    "Bb": 10,
+    "A#": 10,
+    "B": 11
+  },
+  "sections": [
+    {
+      "id": "triads",
+      "label": "Triads",
+      "description": "Basic three-note chords.",
+      "enabled": true,
+      "inversions": [
+        { "id": 0, "label": "Root position", "short": "Root", "defaultEnabled": true },
+        { "id": 1, "label": "1st inversion", "short": "1st", "defaultEnabled": true },
+        { "id": 2, "label": "2nd inversion", "short": "2nd", "defaultEnabled": true }
+      ],
+      "chords": [
+        { "id": "maj", "label": "Major",      "symbol": "",   "intervals": [0, 4, 7], "defaultEnabled": true },
+        { "id": "min", "label": "Minor",      "symbol": "m",  "intervals": [0, 3, 7], "defaultEnabled": true },
+        { "id": "dim", "label": "Diminished", "symbol": "°",  "intervals": [0, 3, 6], "defaultEnabled": true },
+        { "id": "aug", "label": "Augmented",  "symbol": "+",  "intervals": [0, 4, 8], "defaultEnabled": true }
+      ]
+    },
+    {
+      "id": "sixths",
+      "label": "6ths",
+      "description": "Chords with 6th extensions.",
+      "enabled": false,
+      "inversions": [
+        { "id": 0, "label": "Root position", "short": "Root", "defaultEnabled": true },
+        { "id": 1, "label": "1st inversion", "short": "1st", "defaultEnabled": true },
+        { "id": 2, "label": "2nd inversion", "short": "2nd", "defaultEnabled": true },
+        { "id": 3, "label": "3rd inversion", "short": "3rd", "defaultEnabled": true }
+      ],
+      "chords": [
+        { "id": "maj6",   "label": "Major 6",   "symbol": "6",   "intervals": [0, 4, 7, 9], "defaultEnabled": false },
+        { "id": "min6",   "label": "Minor 6",   "symbol": "m6",  "intervals": [0, 3, 7, 9], "defaultEnabled": false },
+        { "id": "maj6_9", "label": "Major 6/9", "symbol": "6/9", "intervals": [0, 4, 7, 9, 14], "defaultEnabled": false }
+      ]
+    },
+    {
+      "id": "sevenths",
+      "label": "7ths",
+      "description": "Four-note chords with 7ths.",
+      "enabled": false,
+      "inversions": [
+        { "id": 0, "label": "Root position", "short": "Root", "defaultEnabled": true },
+        { "id": 1, "label": "1st inversion", "short": "1st", "defaultEnabled": true },
+        { "id": 2, "label": "2nd inversion", "short": "2nd", "defaultEnabled": true },
+        { "id": 3, "label": "3rd inversion", "short": "3rd", "defaultEnabled": true }
+      ],
+      "chords": [
+        { "id": "maj7",   "label": "Major 7",         "symbol": "maj7", "intervals": [0, 4, 7, 11], "defaultEnabled": true },
+        { "id": "dom7",   "label": "Dominant 7",      "symbol": "7",    "intervals": [0, 4, 7, 10], "defaultEnabled": true },
+        { "id": "min7",   "label": "Minor 7",         "symbol": "m7",   "intervals": [0, 3, 7, 10], "defaultEnabled": true },
+        { "id": "min7b5", "label": "Half-diminished", "symbol": "ø7",   "intervals": [0, 3, 6, 10], "defaultEnabled": false },
+        { "id": "dim7",   "label": "Diminished 7",    "symbol": "°7",   "intervals": [0, 3, 6, 9],  "defaultEnabled": false }
+      ]
+    },
+    {
+      "id": "ninths",
+      "label": "9ths",
+      "description": "Chords with 9th extensions.",
+      "enabled": false,
+      "inversions": [
+        { "id": 0, "label": "Root position", "short": "Root", "defaultEnabled": true },
+        { "id": 1, "label": "1st inversion", "short": "1st", "defaultEnabled": true },
+        { "id": 2, "label": "2nd inversion", "short": "2nd", "defaultEnabled": true },
+        { "id": 3, "label": "3rd inversion", "short": "3rd", "defaultEnabled": true }
+      ],
+      "chords": [
+        { "id": "maj9", "label": "Major 9",    "symbol": "maj9", "intervals": [0, 4, 7, 11, 14], "defaultEnabled": false },
+        { "id": "dom9", "label": "Dominant 9", "symbol": "9",    "intervals": [0, 4, 7, 10, 14], "defaultEnabled": false },
+        { "id": "min9", "label": "Minor 9",    "symbol": "m9",   "intervals": [0, 3, 7, 10, 14], "defaultEnabled": false }
+      ]
+    },
+    {
+      "id": "elevenths",
+      "label": "11ths",
+      "description": "Chords with 11th extensions.",
+      "enabled": false,
+      "inversions": [
+        { "id": 0, "label": "Root position", "short": "Root", "defaultEnabled": true },
+        { "id": 1, "label": "1st inversion", "short": "1st", "defaultEnabled": true },
+        { "id": 2, "label": "2nd inversion", "short": "2nd", "defaultEnabled": true },
+        { "id": 3, "label": "3rd inversion", "short": "3rd", "defaultEnabled": true }
+      ],
+      "chords": [
+        { "id": "min11", "label": "Minor 11",    "symbol": "m11", "intervals": [0, 3, 7, 10, 14, 17], "defaultEnabled": false },
+        { "id": "dom11", "label": "Dominant 11", "symbol": "11",  "intervals": [0, 4, 7, 10, 14, 17], "defaultEnabled": false }
+      ]
+    },
+    {
+      "id": "thirteenths",
+      "label": "13ths",
+      "description": "Chords with 13th extensions.",
+      "enabled": false,
+      "inversions": [
+        { "id": 0, "label": "Root position", "short": "Root", "defaultEnabled": true },
+        { "id": 1, "label": "1st inversion", "short": "1st", "defaultEnabled": true },
+        { "id": 2, "label": "2nd inversion", "short": "2nd", "defaultEnabled": true },
+        { "id": 3, "label": "3rd inversion", "short": "3rd", "defaultEnabled": true }
+      ],
+      "chords": [
+        { "id": "maj13", "label": "Major 13",    "symbol": "maj13", "intervals": [0, 4, 7, 11, 14, 21], "defaultEnabled": false },
+        { "id": "dom13", "label": "Dominant 13", "symbol": "13",    "intervals": [0, 4, 7, 10, 14, 21], "defaultEnabled": false },
+        { "id": "min13", "label": "Minor 13",    "symbol": "m13",   "intervals": [0, 3, 7, 10, 14, 21], "defaultEnabled": false }
+      ]
+    }
+  ]
+}
