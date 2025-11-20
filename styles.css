@@ -1,0 +1,226 @@
+:root {
+  --bg:#0b1020;
+  --card:#121a33;
+  --ink:#eaf1ff;
+  --sub:#9fb3d9;
+  --accent:#7cc0ff;
+  --ok:#39d98a;
+  --bad:#ff6b6b;
+}
+
+/* Global layout & typography */
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+  font:15px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:var(--bg);
+  color:var(--ink);
+}
+
+header {
+  padding:18px 20px;
+  border-bottom:1px solid #1f2b55;
+  position:sticky;
+  top:0;
+  background:linear-gradient(180deg, #0b1020 0%, rgba(11,16,32,.92) 100%);
+  backdrop-filter:blur(6px);
+  z-index:4;
+}
+
+h1 {
+  margin:0;
+  font-size:18px;
+  letter-spacing:.2px;
+}
+
+h2 {
+  margin:0 0 8px;
+  font-size:16px;
+  font-weight:700;
+}
+
+main {
+  max-width:980px;
+  margin:18px auto 80px;
+  padding:0 16px;
+}
+
+/* Basic layout helpers */
+.grid {
+  display:grid;
+  gap:12px;
+}
+
+.two {
+  grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
+.card {
+  background:var(--card);
+  border:1px solid #1f2b55;
+  border-radius:14px;
+  padding:14px;
+}
+
+/* Form elements */
+label {
+  display:block;
+  color:var(--sub);
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+select,
+input[type="number"],
+input[type="text"] {
+  width:100%;
+  background:#0e1428;
+  color:#fff;
+  border:1px solid #263870;
+  border-radius:10px;
+  padding:8px 10px;
+}
+
+input[type="checkbox"] {
+  transform:translateY(2px);
+}
+
+/* Layout bits */
+.row {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.muted {
+  color:var(--sub);
+  font-size:13px;
+}
+
+/* Buttons */
+button {
+  background:linear-gradient(180deg,#2196f3,#1175c7);
+  color:white;
+  border:0;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+
+button.secondary {
+  background:#0e1428;
+  border:1px solid #3053a0;
+  color:#cfe2ff;
+}
+
+button.ghost {
+  background:transparent;
+  border:1px dashed #3053a0;
+  color:#cfe2ff;
+}
+
+button:disabled {
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+/* Pills / chips */
+.pill {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:12px;
+  color:#bcd2ff;
+  border:1px solid #2b427c;
+  background:#0e1428;
+}
+
+/* Stacks & grids */
+.stack {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* Answer cards stacked vertically */
+.choice-grid {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+}
+
+/* Answer slots */
+.slot {
+  background:#0e1428;
+  border:1px solid #29417e;
+  border-radius:12px;
+  padding:8px;
+  min-height:90px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  justify-content:space-between;
+}
+
+.slot-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:12px;
+  color:#9eb7ef;
+}
+
+.slot.correct {
+  border-color:#2c9a6b;
+  box-shadow:0 0 0 2px rgba(57,217,138,.2) inset;
+}
+
+.slot.wrong {
+  border-color:#b54e4e;
+  box-shadow:0 0 0 2px rgba(255,107,107,.16) inset;
+}
+
+.slot .row > select {
+  flex:1;
+}
+
+/* Toolbar & stats */
+.toolbar {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.score {
+  font-weight:800;
+  color:#bfe6ff;
+}
+
+.note {
+  border-left:3px solid #2c7be5;
+  padding-left:10px;
+  color:#b9c8ea;
+}
+
+/* Slightly darker nested cards in the chord config panel */
+#chord-config-panel .card {
+  background:#0f1731;
+}
+
+#chord-config-panel h2 {
+  font-size:16px;
+  margin-bottom:4px;
+}
+
+/* New: hide/show section details cleanly */
+.section-details {
+  margin-top:8px;
+}
