@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keyless Chord Sequence Ear Trainer (Config-Driven)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Keyless Chord Sequence Ear Trainer</h1>
+</header>
+
+<main>
+  <!-- Global controls: tempo, count, roots, tone -->
+  <section class="card">
+    <div class="grid two">
+      <div>
+        <label for="bpm">Tempo (BPM)</label>
+        <input id="bpm" type="number" min="30" max="220" value="90" />
+      </div>
+      <div>
+        <label for="nChords">Number of chords</label>
+        <input id="nChords" type="number" min="1" max="16" value="4" />
+      </div>
+      <div>
+        <label for="rootList">Roots (comma separated)</label>
+        <input
+                id="rootList"
+                type="text"
+                placeholder="C, C#, D, Eb, E, F, F#, G, Ab, A, Bb, B"
+        />
+        <div class="muted" style="margin-top:4px">
+          This will be pre-filled from <code>chords-config.json</code>. Edit here
+          if you want a smaller pool (e.g. <code>C, F, G</code>).
+        </div>
+      </div>
+      <div>
+        <label for="tone">Tone</label>
+        <select id="tone">
+          <option value="triangle">Triangle</option>
+          <option value="sine">Sine</option>
+          <option value="sawtooth">Saw</option>
+          <option value="square">Square</option>
+          <option value="piano">Piano</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chord configuration (sections + inversions) -->
+  <section class="card" id="chord-config-panel" style="margin-top:14px">
+    <h2 style="margin-top:0">Chord Types & Inversions</h2>
+    <p class="muted" style="margin-bottom:8px">
+      These sections are generated dynamically from <code>chords-config.json</code>.
+      Check the chord types and inversions you want included in exercises.
+    </p>
+    <div id="chordSections"></div>
+  </section>
+
+  <!-- Unified control / transport panel -->
+  <section class="card" id="play-panel" style="margin-top:14px">
+    <div class="toolbar">
+      <button id="start">Start Exercise</button>
+      <button class="secondary" id="playAll" disabled>Hear Full Progression</button>
+
+      <button id="eval">Submit Answers</button>
+      <button class="ghost" id="next" disabled>Next Exercise</button>
+
+      <label class="row" style="gap:6px">
+        <input type="checkbox" id="autoPlay" checked />
+        Auto-play progression on start
+      </label>
+
+      <button class="ghost" id="resetSession">Reset Session</button>
+
+      <span class="score" id="sessionScore">
+        Session: 0 correct / 0 attempts | Exercises: 0
+      </span>
+      <span class="muted" id="missStats"> | Misses: —</span>
+    </div>
+
+    <div class="muted" id="status" style="margin-top:6px;"></div>
+  </section>
+
+  <!-- Exercise / answers -->
+  <section id="exercise" class="card" style="margin-top:14px; display:none">
+    <!-- Reference chord card -->
+    <div id="referenceSlot" class="choice-grid" style="margin-top:4px;"></div>
+
+    <!-- Answer cards -->
+    <div id="slots" class="choice-grid" style="margin-top:12px;"></div>
+
+    <p class="note">
+      A random reference chord is generated separately from the sequence.
+      “Hear Full Progression” plays the reference first, then all sequence chords in order.
+    </p>
+  </section>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
